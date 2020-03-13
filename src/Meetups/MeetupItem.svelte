@@ -4,6 +4,7 @@
     export let imageUrl;
     export let description;
     export let address;
+    export let email
 </script>
 
 <style>
@@ -63,12 +64,14 @@
     <header>
         <h1>{title}</h1>
         <h4>{subtitle}</h4>
+        <p>{address}</p>
     </header>
     <div class="image"><img src="{imageUrl}" alt="{title}"></div>
     <div class="content">
-        <p></p>
+        <p>{description}</p>
     </div>
     <footer>
+    <a href="mailto:{email}">Contact</a>
     <button>Show Details</button>
     <button>Favorite</button>
     </footer>
