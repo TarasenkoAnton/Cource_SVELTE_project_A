@@ -63,7 +63,7 @@
 <article>
     <header>
         <h1>{title}</h1>
-        <h4>{subtitle}</h4>
+        <h2>{subtitle}</h2>
         <p>{address}</p>
     </header>
     <div class="image"><img src="{imageUrl}" alt="{title}"></div>
