@@ -5,11 +5,12 @@
 let title = '';
 let subtitle = '';
 let address = '';
+let imageUrl = '';
 let email = '';
 let description = '';
 
 
-const meetups = [
+let meetups = [
     {
         id: 'm1',
         title: 'Coding deep learning',
@@ -32,7 +33,20 @@ const meetups = [
     }
 ];
 
-function addMeetup (){};
+function addMeetup (){
+    const newMeetup = {
+            id: Math.random().toString(),
+            title: title,
+            subtitle: subtitle,
+            address: address,
+            imageUrl: imageUrl,
+            contactEmail: email,
+            description: description,
+     };
+
+     // meetups.push(newMeetup); // This is DOS'NT works //
+     meetups = [newMeetup, ...meetups];
+};
 </script>
 
 <style>
@@ -47,27 +61,27 @@ main{
     <form on:submit|preventDefault="{addMeetup}">
         <div class="form-control">
             <label for="title">Title</label>
-            <input type="text" id="title">
+            <input type="text" id="title" bind:value={title}>
         </div>
         <div class="form-control">
             <label for="subtitle">Subtitle</label>
-            <input type="text" id="subbtitle">
+            <input type="text" id="subbtitle" bind:value={subtitle}>
         </div>
         <div class="form-control">
             <label for="address">Address</label>
-            <input type="text" id="sddress">
+            <input type="text" id="sddress" bind:value={address}>
         </div>
         <div class="form-control">
             <label for="imageUrl">Image URL</label>
-            <input type="text" id="imageUrl">
+            <input type="text" id="imageUrl" bind:value={imageUrl}>
         </div>
         <div class="form-control">
             <label for="email">E-Mail</label>
-            <input type="email" id="imail">
+            <input type="email" id="imail" bind:value={email}>
         </div>
         <div class="form-control">
             <label for="description">Description</label>
-            <textarea rows="3" id="description"/>
+            <textarea rows="3" id="description" bind:value={description}/>
         </div>
         <button type="submit">Save</button>
     </form>
