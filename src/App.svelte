@@ -1,6 +1,7 @@
 <script>
     import Header from  './UI/Header.svelte';
     import MeetupGrid from './Meetups/MeetupGrid.svelte';
+    import TextInput from './UI/TextInput.svelte';
  
 let title = '';
 let subtitle = '';
@@ -59,10 +60,12 @@ main{
 
 <main>
     <form on:submit|preventDefault="{addMeetup}">
-        <div class="form-control">
-            <label for="title">Title</label>
-            <input type="text" id="title" bind:value={title}>
-        </div>
+        <TextInput 
+        id=""
+        label=""
+        value={title}
+        on:input={event => (title = event.target.value)}
+        />
         <div class="form-control">
             <label for="subtitle">Subtitle</label>
             <input type="text" id="subbtitle" bind:value={subtitle}>
