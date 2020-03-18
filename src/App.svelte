@@ -54,40 +54,59 @@ function addMeetup (){
 main{
     margin-top: 5rem;
 }
+form{
+    width: 30rem;
+    max-width:90%;
+     margin: auto;
+}
 </style>
 
 <Header/>
 
 <main>
     <form on:submit|preventDefault="{addMeetup}">
-        <TextInput 
+<TextInput 
         id="title"
         label="Title"
         value={title}
+        type="text"
         on:input={event => (title = event.target.value)}
         />
-        <TextInput 
+<TextInput 
         id="subtitl"
         label="Subtitle"
         value={subtitle}
-        on:input={event => (title = event.subtitle.value)}
+        type="text"
+        on:input={event => (subtitle = event.target.value)}
         /> 
-        <div class="form-control">
-            <label for="address">Address</label>
-            <input type="text" id="sddress" bind:value={address}>
-        </div>
-        <div class="form-control">
-            <label for="imageUrl">Image URL</label>
-            <input type="text" id="imageUrl" bind:value={imageUrl}>
-        </div>
-        <div class="form-control">
-            <label for="email">E-Mail</label>
-            <input type="email" id="imail" bind:value={email}>
-        </div>
-        <div class="form-control">
-            <label for="description">Description</label>
-            <textarea rows="3" id="description" bind:value={description}/>
-        </div>
+<TextInput 
+        id="address"
+        label="Address"
+        value={address}
+        type="text"
+        on:input={event => (address = event.target.value)}
+        />
+<TextInput 
+        id="imageUrl"
+        label="Image UGR"
+        value={imageUrl}
+        type="text"
+        on:input={event => (imageUrl = event.target.value)}
+/>
+<TextInput 
+        id="email"
+        label="E-Mail"
+        value={email}
+        type="email"
+        on:input={event => (email = event.target.value)}
+/>
+<TextInput 
+        id="description"
+        label="Description"
+        value={description}
+        controlType="textarea"
+        on:input={event => (description = event.target.value)}
+        /> 
         <button type="submit">Save</button>
     </form>
  <MeetupGrid {meetups} />
