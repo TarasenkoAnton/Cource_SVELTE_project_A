@@ -61,15 +61,17 @@ main{
 <main>
     <form on:submit|preventDefault="{addMeetup}">
         <TextInput 
-        id=""
-        label=""
+        id="title"
+        label="Title"
         value={title}
         on:input={event => (title = event.target.value)}
         />
-        <div class="form-control">
-            <label for="subtitle">Subtitle</label>
-            <input type="text" id="subbtitle" bind:value={subtitle}>
-        </div>
+        <TextInput 
+        id="subtitl"
+        label="Subtitle"
+        value={subtitle}
+        on:input={event => (title = event.subtitle.value)}
+        /> 
         <div class="form-control">
             <label for="address">Address</label>
             <input type="text" id="sddress" bind:value={address}>
