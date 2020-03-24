@@ -1,6 +1,8 @@
 <script>
 export let type;
 export let caption;
+export let href;
+export let mode;
 </script>
 <style> 
 button,
@@ -78,4 +80,9 @@ button:disabled:active {
 .outline.success:active {
   background: #c2ffd1;
 }</style>
-<button type="{type}">{caption}</button>
+
+{#if href}
+<a {href}>{caption}</a>
+{:else}
+<button class="{mode}" type="{type}">{caption}</button>
+{/if}
